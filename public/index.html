@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The "VitalSigns" Patient Registration System</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
     <header>Patient Vital Signs Forms</header>
@@ -17,9 +17,9 @@
     </nav>
     <main>
         <h1>Vital Signs Form</h1>
-        <form method="post">
+        <form id="patient-form">
             <label for="name">Full name:</label>
-            <input type="text" id="name" name="nombre" required, placeholder="Pepe Perez"/>
+            <input type="text" id="name" name="fullName" required placeholder="Pepe Perez" />
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required/>
@@ -36,9 +36,9 @@
             <fieldset>
                 <legend>Gender:</legend>
                 <label for="gender-male">Male</label>
-                <input type="radio" id="gender-male" name="gender"/>
-                <label for="gender-female">Female:</label>
-                <input type="radio" id="gender-female" name="gender"/> 
+                <input type="radio" id="gender-male" name="gender" value="male" required />
+                <label for="gender-female">Female</label>
+                <input type="radio" id="gender-female" name="gender" value="female" required />
             </fieldset>
 
             <label for="blood">Blood Type:</label>
@@ -53,16 +53,18 @@
             </select>
 
             <label for="history">Medical History:</label>
-            <textarea placeholder="e.g. Allergies" id="history"></textarea>
+            <textarea placeholder="e.g. Allergies" id="history" name="medicalHistory"></textarea>
 
             <label for="consent">Consent</label>
-            <input type="checkbox" id="consent" required/> I hereby consent to share my info
+            <input type="checkbox" id="consent" name="consent" value="yes" required /> I hereby consent to share my info
 
-            <input type="submit" class="button">
+            <input type="submit" class="button" value="Register" />
         </form>
         <footer>
 
         </footer>
     </main>
+</main>
+<script src="/app.js"></script>
 </body>
 </html>
